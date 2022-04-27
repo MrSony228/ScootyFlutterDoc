@@ -35,12 +35,6 @@ class UserToRegister {
   late String issuedByPassport;
   late String password;
 
-  // Map<String, dynamic> toMap(){
-  //   return{
-  //
-  //   }
-  // }
-
   factory UserToRegister.fromJson(Map<String, dynamic> data) =>
       _$UserToRegisterFromJson(data);
 

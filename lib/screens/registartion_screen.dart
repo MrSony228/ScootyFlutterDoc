@@ -159,14 +159,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             style: Theme.of(context).textTheme.subtitle2,
                           ),
                         ),
-                        SizedBox(
+                      const  SizedBox(
                           height: 20,
                         ),
                         ScootyTextField("Иванович", middleNameController),
                       ],
                     ),
                   ),
-                  SizedBox(
+              const    SizedBox(
                     width: 28,
                   ),
                   Expanded(
@@ -180,7 +180,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             style: Theme.of(context).textTheme.subtitle2,
                           ),
                         ),
-                        SizedBox(
+                       const  SizedBox(
                           height: 20,
                         ),
                         Container(
@@ -227,7 +227,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 height: 45,
                 child: ElevatedButton(
