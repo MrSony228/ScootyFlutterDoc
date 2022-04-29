@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:scooty/presentation/custom_icons_icons.dart';
+import 'package:scooty/screens/qr-code_scanner.dart';
 import 'package:scooty/widgets/filter_modal_bottom_sheet.dart';
 import 'package:scooty/widgets/map_handler.dart';
 import 'package:scooty/widgets/menu_modal_bottom_sheet.dart';
@@ -22,19 +23,25 @@ class MainScreen extends StatefulWidget {
   }
 }
 
+List<ParkingPlaces> parking = [];
+
 class _MainScreenState extends State<MainScreen> {
   MapController mapController = MapController(
     initMapWithUserPosition: true,
   );
 
-  double _batteryLevel = 80;
+  double _batteryLevel = 30;
   double _maxDist = 200;
-  List<ParkingPlaces> parking = [];
 
   @override
   void initState() {
     super.initState();
-    MapHandler(mapController, parking).setTransport(_maxDist, _batteryLevel);
+    setTransportOfParking();
+  }
+
+  void setTransportOfParking() async {
+    parking = await MapHandler(mapController, parking)
+        .setTransport(_maxDist, _batteryLevel);
   }
 
   @override
@@ -66,7 +73,8 @@ class _MainScreenState extends State<MainScreen> {
                     icon: const Icon(CustomIcons.filter),
                     onPressed: () {
                       FilterModalBottomSheet(context, _batteryLevel, _maxDist,
-                          parking, mapController).show();
+                              parking, mapController)
+                          .show();
                     },
                   )
                 ],
@@ -130,7 +138,14 @@ class _MainScreenState extends State<MainScreen> {
                     width: double.infinity,
                     height: 45,
                     child: ElevatedButton(
-                        onPressed: () {}, child: const Text('Начать поездку')),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const QrCodeScannerScreen()));
+                        },
+                        child: const Text('Начать поездку')),
                   ),
                   const SizedBox(
                     height: 25,

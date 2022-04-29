@@ -488,6 +488,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "qr_code_scanner",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/qr_code_scanner-0.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.13",
       "packageUri": "lib/",
@@ -722,7 +728,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-27T13:10:49.572878Z",
+  "generated": "2022-04-29T12:16:22.103191Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

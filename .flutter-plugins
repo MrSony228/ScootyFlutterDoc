@@ -9,6 +9,7 @@ geolocator_windows=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geolo
 path_provider_linux=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_linux-2.1.5\\
 path_provider_windows=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_windows-2.0.5\\
 permission_handler=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\permission_handler-8.3.0\\
+qr_code_scanner=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\qr_code_scanner-0.7.0\\
 shared_preferences=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences-2.0.13\\
 shared_preferences_android=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_android-2.0.11\\
 shared_preferences_ios=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_ios-2.1.0\\
