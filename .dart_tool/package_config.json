@@ -392,6 +392,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mobile_scanner",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/mobile_scanner-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "package_config",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-2.0.2",
       "packageUri": "lib/",
@@ -728,7 +734,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-29T12:16:22.103191Z",
+  "generated": "2022-05-05T07:37:26.128951Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

@@ -11,7 +11,8 @@ class Transport {
       required this.description,
       required this.mileage,
       required this.manufacturer,
-      required this.free});
+      required this.free,
+      required this.price});
 
   late int id;
   late String name;
@@ -19,6 +20,7 @@ class Transport {
   late String description;
   late int mileage;
   late String manufacturer;
+  late int price;
   late bool free;
 
   factory Transport.fromJson(Map<String, dynamic> data) =>

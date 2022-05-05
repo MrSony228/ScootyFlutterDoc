@@ -14,6 +14,7 @@ Transport _$TransportFromJson(Map<String, dynamic> json) => Transport(
       mileage: json['mileage'] as int,
       manufacturer: json['manufacturer'] as String,
       free: json['free'] as bool,
+      price: json['price'] as int,
     );
 
 Map<String, dynamic> _$TransportToJson(Transport instance) => <String, dynamic>{
@@ -23,5 +24,6 @@ Map<String, dynamic> _$TransportToJson(Transport instance) => <String, dynamic>{
       'description': instance.description,
       'mileage': instance.mileage,
       'manufacturer': instance.manufacturer,
+      'price': instance.price,
       'free': instance.free,
     };

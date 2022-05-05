@@ -29,24 +29,25 @@ class _QrCodeScannerScreen extends State<QrCodeScannerScreen> {
             final String? code = barcode.rawValue;
             Transport result =
                 await InternetEngine().getTransportByQrCode(code!);
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    backgroundColor: Colors.black,
-                    title: const Text("Qr-Code"),
-                    content: Text(
-                      result.id.toString() + result.name.toString(),
-                    ),
-                    actions: [
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text("Закрыть"))
-                    ],
-                  );
-                });
+            Navigator.pop(context, result);
+            // showDialog(
+            //     context: context,
+            //     builder: (context) {
+            //       return AlertDialog(
+            //         backgroundColor: Colors.black,
+            //         title: const Text("Qr-Code"),
+            //         content: Text(
+            //           result.id.toString() + result.name.toString(),
+            //         ),
+            //         actions: [
+            //           ElevatedButton(
+            //               onPressed: () {
+            //                 Navigator.pop(context);
+            //               },
+            //               child: const Text("Закрыть"))
+            //         ],
+             //     );
+               // });
           }),
 
       Container(

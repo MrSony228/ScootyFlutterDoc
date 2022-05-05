@@ -6,12 +6,13 @@ import 'package:scooty/model/user_to_register.dart';
 
 import 'model/transport.dart';
 
-// http://10.77.41.245:8080/
-const String localhost = "192.168.3.42";
+// 10.77.41.245:8080
+// 192.168.3.42
+const String localhost = "10.77.41.245";
 
 class InternetEngine {
   Future<http.Response> basePost(String url, Map<String, dynamic> json) async {
-    return http.post(Uri.parse('http://' + localhost + ':8080/' + url),
+    return http.post(Uri.parse('http://'  + localhost + ':8080/' + url),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           "Accept": "application/json",
