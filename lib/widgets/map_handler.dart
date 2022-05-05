@@ -25,30 +25,22 @@ class MapHandler extends StatelessWidget {
     if (!serviceEnabled) {
       return Future.error('Location services are disabled.');
     }
-
-    // permission = await Geolocator.checkPermission();
-    // if (permission == LocationPermission.denied) {
-    //   permission = await Geolocator.requestPermission();
-    //   if (permission == LocationPermission.denied) {
-    //     return Future.error('Location permissions are denied');
-    //   }
-    // }
-    //
-    // if (permission == LocationPermission.deniedForever) {
-    //   return Future.error(
-    //       'Location permissions are permanently denied, we cannot request permissions.');
-    // }
     return await Geolocator.getCurrentPosition();
   }
 
-  Future<List<ParkingPlaces>> setTransport(
+  Future<List<ParkingPlaces>?> setTransport(
       double _maxDist, double _batteryLevel) async {
     var position = await _determinePosition();
-    parking = await InternetEngine().getTransport(
-        position.latitude.toString(),
-        position.longitude.toString(),
-        _maxDist.toString(),
-        _batteryLevel.toString());
+    try {
+      parking = (await InternetEngine().getTransport(
+          position.latitude.toString(),
+          position.longitude.toString(),
+          _maxDist.toString(),
+          _batteryLevel.toString()))!;
+    }
+    catch (set){
+      return null;
+    }
 
     for (int i = 0; i < parking.length; i++) {
       List<Transport> transport = parking[i].transports;
@@ -82,6 +74,12 @@ class MapHandler extends StatelessWidget {
         showZoomController: true,
         androidHotReloadSupport: true,
         initZoom: 18,
+        onMapIsReady: (result) async{
+         await setTransport(500, 30);
+        },
+        onLocationChanged: (GeoPoint geoPoint) async{
+          await mapController.currentLocation();
+        },
         onGeoPointClicked: (GeoPoint geoPoint) async {
           // var position = await _determinePosition();
           // parking = await InternetEngine().getTransport(

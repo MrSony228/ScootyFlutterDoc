@@ -6,10 +6,12 @@ import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:scooty/presentation/custom_icons_icons.dart';
 import 'package:scooty/screens/qr-code_scanner.dart';
+import 'package:scooty/screens/start_screen.dart';
 import 'package:scooty/widgets/filter_modal_bottom_sheet.dart';
 import 'package:scooty/widgets/map_handler.dart';
 import 'package:scooty/widgets/menu_modal_bottom_sheet.dart';
 
+import '../model/local_storage.dart';
 import '../model/parking_places.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,17 +33,39 @@ class _MainScreenState extends State<MainScreen> {
   );
 
   double _batteryLevel = 30;
-  double _maxDist = 200;
+  double _maxDist = 500;
 
   @override
   void initState() {
     super.initState();
-    setTransportOfParking();
-  }
-
-  void setTransportOfParking() async {
-    parking = await MapHandler(mapController, parking)
-        .setTransport(_maxDist, _batteryLevel);
+    var result = null;
+    setTransportOfParking().then((value) => result);
+    if (result = false) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              backgroundColor: Colors.black,
+              title: const Text("Qr-Code"),
+              content: Text(
+                result.toString(),
+              ),
+              actions: [
+                ElevatedButton(
+                    onPressed: () {
+                      LocalStorage().deleteToken();
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const StartScreen()),
+                        (Route<dynamic> route) => false,
+                      );
+                    },
+                    child: const Text("Закрыть"))
+              ],
+            );
+          });
+    }
   }
 
   @override
@@ -107,7 +131,6 @@ class _MainScreenState extends State<MainScreen> {
             padding: const EdgeInsets.all(16),
             child: Center(
               child: Column(
-                // mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
@@ -155,5 +178,15 @@ class _MainScreenState extends State<MainScreen> {
             ),
           )
         ]));
+  }
+
+  Future<bool> setTransportOfParking() async {
+    try {
+      parking = (await MapHandler(mapController, parking)
+          .setTransport(_maxDist, _batteryLevel))!;
+    } catch (set) {
+      return false;
+    }
+    return true;
   }
 }
