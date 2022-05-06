@@ -6,9 +6,9 @@ import 'package:scooty/model/user_to_register.dart';
 
 import 'model/transport.dart';
 
-// 10.77.41.245:8080
+// 10.77.41.245
 // 192.168.3.42
-const String localhost = "10.77.41.245";
+const String localhost = "192.168.3.42";
 
 class InternetEngine {
   Future<http.Response> basePost(String url, Map<String, dynamic> json) async {
