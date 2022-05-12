@@ -100,4 +100,22 @@ class InternetEngine {
         });
     return Transport.fromJson(jsonDecode(response.body)) ;
   }
+
+  Future<UserToRegister?> getUser() async{
+    String token = "";
+    await LocalStorage().getToken().then((String result) {
+      token = result;
+    });
+    var response = await http.get(
+        Uri.http(localhost + ':8080', '/users/get/', {
+        }),
+        headers: <String, String>{
+          'Content-Type': "application/json; charset=UTF-8",
+          'x-auth-token': token
+        });
+    if(response.statusCode == 403){
+      return null;
+    }
+    return UserToRegister.fromJson(jsonDecode(response.body)) ;
+  }
 }

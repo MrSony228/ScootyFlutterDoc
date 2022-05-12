@@ -200,6 +200,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_native_splash",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_splash-2.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "flutter_osm_interface",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_osm_interface-0.1.20",
       "packageUri": "lib/",
@@ -348,6 +354,12 @@
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/json_serializable-6.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "lint",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/lint-1.8.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "lints",
@@ -632,6 +644,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "universal_io",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/universal_io-2.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "url_launcher",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.1.0",
       "packageUri": "lib/",
@@ -734,7 +752,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-05-06T10:14:20.851205Z",
+  "generated": "2022-05-10T12:44:29.120763Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

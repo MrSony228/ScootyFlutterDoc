@@ -242,6 +242,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
+                                backgroundColor: Colors.black,
                                 title: const Text("Ошибка"),
                                 content: const Text(
                                   "Заполните все поля",
