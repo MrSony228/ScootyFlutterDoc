@@ -8,7 +8,7 @@ import 'model/transport.dart';
 
 // 10.77.41.245
 // 192.168.3.42
-const String localhost = "192.168.3.42";
+const String localhost = "10.77.41.245";
 
 class InternetEngine {
   Future<http.Response> basePost(String url, Map<String, dynamic> json) async {
@@ -28,7 +28,7 @@ class InternetEngine {
   }
 
   register(UserToRegister userToRegister) async {
-    http.Response response = await basePost('users', userToRegister.toJson());
+    http.Response response = await basePost('users/registration/', userToRegister.toJson());
     if (response.statusCode != 200) {
       return response.statusCode;
     }
@@ -110,7 +110,8 @@ class InternetEngine {
         Uri.http(localhost + ':8080', '/users/get/', {
         }),
         headers: <String, String>{
-          'Content-Type': "application/json; charset=UTF-8",
+          'Content-Type': 'application/json; charset=UTF-8',
+          "Accept": "application/json",
           'x-auth-token': token
         });
     if(response.statusCode == 403){

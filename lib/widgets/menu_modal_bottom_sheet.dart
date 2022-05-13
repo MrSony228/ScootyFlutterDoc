@@ -121,7 +121,7 @@ class MenuModalBottomSheet {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(user.firstName + "/n" + user.lastName,
+                              Text(user.firstName + " " + user.lastName,
                                   style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 20,

@@ -9,7 +9,7 @@ class UserToRegister {
       required this.lastName,
       required this.firstName,
       required this.middleName,
-      required this.dateOfBirth,
+      required this.birthdate,
       required this.seriesDriverLicense,
       required this.numberDriverLicense,
       required this.dateOfIssueDriverLicense,
@@ -24,16 +24,16 @@ class UserToRegister {
   late String lastName;
   late String firstName;
   late String middleName;
-  late DateTime dateOfBirth;
-  late String seriesDriverLicense;
-  late String numberDriverLicense;
-  late DateTime dateOfIssueDriverLicense;
-  late String issuedByDriverLicense;
-  late String seriesPassport;
-  late String numberPassport;
-  late DateTime dateOfIssuePassport;
-  late String issuedByPassport;
-  late String password;
+  late DateTime birthdate;
+  late String? seriesDriverLicense;
+  late String? numberDriverLicense;
+  late DateTime? dateOfIssueDriverLicense;
+  late String? issuedByDriverLicense;
+  late String? seriesPassport;
+  late String? numberPassport;
+  late DateTime? dateOfIssuePassport;
+  late String? issuedByPassport;
+  late String? password;
 
   factory UserToRegister.fromJson(Map<String, dynamic> data) =>
       _$UserToRegisterFromJson(data);

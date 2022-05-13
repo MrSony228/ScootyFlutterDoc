@@ -170,6 +170,14 @@ class _PassportRegistrationScreenState
                       widget.user.numberPassport = numberUdostController.text;
                       widget.user.issuedByPassport = issuedByUdostController.text;
                      var result = await InternetEngine().register(widget.user);
+                     if(result == null ||result== 200){
+                       // Navigator.push(
+                       //   context,
+                       //   MaterialPageRoute(
+                       //       builder: (context) =>
+                       //          EmailConfirmationScreen(user: widget.user,)),
+                       // );
+                     }
                      if(result != 200)
                        {
                          showDialog(
@@ -194,12 +202,6 @@ class _PassportRegistrationScreenState
                              });
                          return;
                        }
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) =>
-                      //          EmailConfirmationScreen(user: widget.user,)),
-                      // );
                     },
                     child: const Text(
                       'Продолжить',

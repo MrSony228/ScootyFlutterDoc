@@ -44,7 +44,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 alignment: Alignment.center,
                 child: Image.asset("assets/images/logo.png"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text("Привет", style: Theme.of(context).textTheme.subtitle1),
@@ -134,7 +134,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             style: Theme.of(context).textTheme.subtitle2,
                           ),
                         ),
-                        SizedBox(
+                     const   SizedBox(
                           height: 20,
                         ),
                         ScootyTextField("Иван", lastNameController),
@@ -143,7 +143,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+             const SizedBox(
                 height: 20,
               ),
               Row(
@@ -183,7 +183,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                        const  SizedBox(
                           height: 20,
                         ),
-                        Container(
+                        SizedBox(
                           height: 48,
                           width: 250,
                           child: ElevatedButton(
@@ -294,7 +294,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 lastName: lastNameController.text,
                                 firstName: firstNameController.text,
                                 middleName: middleNameController.text,
-                                dateOfBirth: selectDate,
+                                birthdate: selectDate,
                                 seriesDriverLicense: "",
                                 numberDriverLicense: "",
                                 dateOfIssueDriverLicense: DateTime.now(),
